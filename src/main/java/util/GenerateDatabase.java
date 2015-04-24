@@ -1,9 +1,15 @@
 package util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.nhuocquy.model.Account;
+import com.nhuocquy.model.Conversation;
+import com.nhuocquy.model.Friend;
+
 
 
 public class GenerateDatabase {
@@ -20,6 +26,24 @@ public class GenerateDatabase {
 		ac3.setName("Nhuoc Quy");
 		ac3.setUsername("nhuocquy");
 		ac3.setPassword("nhuocquy");
+		//
+		List<Friend> listFre = new ArrayList<Friend>();
+		Friend fre = new Friend();
+		fre.setName("Trang");
+		listFre.add(fre);
+		 fre = new Friend();
+		fre.setName("Tuyet");
+		listFre.add(fre);
+		fre = new Friend();
+		fre.setName("Nhuoc Quy");
+		listFre.add(fre);
+		Conversation con = new Conversation();
+		con.setFriends(listFre);
+//		
+		List<Conversation> lisConversations = new ArrayList<Conversation>();
+		lisConversations.add(con);
+		ac1.setListFrs(listFre);
+		ac1.setConversations(lisConversations);
 		
 		Session session = HibernateUtil.openSession();
 		Transaction transaction = null;

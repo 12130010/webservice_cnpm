@@ -26,6 +26,6 @@
 		<mapping class="com.nhuocquy.model.Account" />
 		<mapping class="com.nhuocquy.model.Conversation" />
 		<mapping class="com.nhuocquy.model.Friend" />
-		<mapping class="com.nhuocquy.model.Message" />
+		<mapping class="com.nhuocquy.model.MessageChat" />
 	</session-factory>
 </hibernate-configuration>
