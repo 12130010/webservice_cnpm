@@ -1,10 +1,6 @@
 package test;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,25 +28,27 @@ public class TestJackson {
 		listCon.add(new Conversation(1, listFre, new ArrayList<MessageChat>()));
 		ac.setConversations(listCon);
 		
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		
-//		try {
-//			System.out.println(objectMapper.writeValueAsString(ac));
-//		} catch (JsonGenerationException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (JsonMappingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		ObjectOutputStream ob = new ObjectOutputStream(new FileOutputStream("G:\\ob.txt"));
-		ob.writeObject(ac);
-		ob.close();
-		ObjectInputStream ob2 = new ObjectInputStream(new FileInputStream("G:\\ob.txt"));
-		System.out.println(ob2.readObject());
-		ob2.close();
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		try {
+			String s = objectMapper.writeValueAsString(ac);
+			System.out.println(s);
+			System.out.println(objectMapper.readValue(s, Account.class));
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();	
+		}
+//		ObjectOutputStream ob = new ObjectOutputStream(new FileOutputStream("G:\\ob.txt"));
+//		ob.writeObject(ac);
+//		ob.close();
+//		ObjectInputStream ob2 = new ObjectInputStream(new FileInputStream("G:\\ob.txt"));
+//		System.out.println(ob2.readObject());
+//		ob2.close();
 	}
 }

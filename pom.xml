@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.nhuocquy</groupId>
 	<artifactId>tuyensinh</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -125,7 +125,7 @@
 		<!-- model -->
 		<dependency>
 			<groupId>com.nhuocquy</groupId>
-			<artifactId>tuyensinh-model</artifactId>
+			<artifactId>tuyensinh-modeldao</artifactId>
 			<version>1.0</version>
 			<scope>compile</scope>
 		</dependency>
