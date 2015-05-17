@@ -1,5 +1,7 @@
 package com.nhuocquy.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -18,7 +20,7 @@ public class AccountController {
 	@Autowired
 	private AccountService accountService;
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/login", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE , headers = {})
 	public @ResponseBody Account login(@RequestParam(defaultValue = "") String username ,@RequestParam(defaultValue = "") String password){
 		try {
 			return accountService.login(username, password);
