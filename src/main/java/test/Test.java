@@ -2,12 +2,10 @@ package test;
 
 public class Test {
 	public static void main(String[] args) {
-		Test test = new abc();
-		System.out.println(test instanceof bgc);
-		
+		String message = "fadsfsa+123:fbaskjbc";
+		long idacc = Long.parseLong(message.substring(message.indexOf('+')+1, message.indexOf(':')));
+		message = message.substring(message.indexOf(':')+1);
+		System.out.println(idacc);
+		System.out.println(message);
 	}
-	static class abc extends Test{
-		
-	}
-	 static class bgc extends Test{
-}}
+}

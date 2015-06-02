@@ -25,4 +25,5 @@
 		<bean class="com.nhuocquy.controller.CORSInterceptor">
 		</bean>
 	</mvc:interceptors>
+	
 </beans>
