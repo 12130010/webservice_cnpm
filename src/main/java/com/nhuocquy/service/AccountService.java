@@ -10,6 +10,7 @@ import com.nhuocquy.dao.DAOFriend;
 import com.nhuocquy.dao.exception.DAOException;
 import com.nhuocquy.model.Account;
 import com.nhuocquy.model.Friend;
+import com.nhuocquy.myfile.MyStatus;
 
 @Service
 public class AccountService {
@@ -18,6 +19,7 @@ public class AccountService {
 	private Account account;
 	public Account login(String username, String password) throws DAOException {
 		account =  daoAccount.login(username, password);
+		if(account != null)
 		account.setPassword(null);
 		return account;
 	}
@@ -43,5 +45,8 @@ public class AccountService {
 	}
 	public List<Friend>  getListAddFriend(long idacc) throws DAOException{
 		return daoAccount.getListFriend(idacc);
+	}
+	public MyStatus signup(Account acc) throws DAOException{
+		return daoAccount.signup(acc);
 	}
 }
